@@ -25,7 +25,6 @@ module.exports = async (appInfo) => {
       port: 9293,
     },
   };
-
   // https://xiaochen1024.com/cdn/fe_interview/fe-nodejs-docs-node-graphql-note-13-%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF.html
   config.io = {
     init: {}, // 透传给Engine.io

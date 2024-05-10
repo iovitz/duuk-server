@@ -12,12 +12,6 @@ module.exports = () => {
 
   config.keys = secretConfig.keys;
 
-  config.cluster = {
-    listen: {
-      port: "9293",
-    },
-  };
-
   config.multiavatar_key = secretConfig.multiavatar_key;
 
   exports.sequelize = {
