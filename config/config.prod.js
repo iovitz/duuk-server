@@ -4,6 +4,10 @@ module.exports = () => {
   const config = (exports = {});
   config.multiavatar_key = secretConfig.multiavatar_key;
 
+  config.logger = {
+    allowDebugAtProd: true,
+  };
+
   exports.jwt = secretConfig.jwt;
 
   config.keys = secretConfig.keys;
