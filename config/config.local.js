@@ -2,6 +2,7 @@ const secretConfig = require("./config.secret");
 
 module.exports = () => {
   const config = (exports = {});
+  config.multiavatar_key = secretConfig.multiavatar_key;
 
   config.logger = {
     consoleLevel: "DEBUG",
@@ -12,7 +13,11 @@ module.exports = () => {
 
   config.keys = secretConfig.keys;
 
-  config.multiavatar_key = secretConfig.multiavatar_key;
+  config.cluster = {
+    listen: {
+      port: 9293,
+    },
+  };
 
   exports.sequelize = {
     ...secretConfig.mysqlConf,

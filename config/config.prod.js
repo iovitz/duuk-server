@@ -1,13 +1,18 @@
-const secretConfig = require("./config.secret");
+const secretConfig = require("./config.secret1");
 
 module.exports = () => {
   const config = (exports = {});
-
   config.multiavatar_key = secretConfig.multiavatar_key;
 
-  config.keys = secretConfig.keys;
+  exports.jwt = secretConfig.jwt;
 
   config.keys = secretConfig.keys;
+
+  config.cluster = {
+    listen: {
+      port: 9293,
+    },
+  };
 
   config.sequelize = {
     ...secretConfig.mysqlConf,
