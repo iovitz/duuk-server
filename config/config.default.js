@@ -1,8 +1,8 @@
 const path = require("path");
 const { customAlphabet } = require("nanoid");
 
-module.exports = async (appInfo) => {
-  const config = (exports = {});
+module.exports = (appInfo) => {
+  const config = {};
 
   const nanoid = customAlphabet("0123456789", 10);
   config.security = {
@@ -52,7 +52,7 @@ module.exports = async (appInfo) => {
     allowDebugAtProd: true,
   };
 
-  exports.session = {
+  config.session = {
     key: "__server_session__",
     maxAge: 30 * 24 * 3600 * 1000, // 1 天
     httpOnly: true,

@@ -2,7 +2,7 @@ const secretConfig = require("./config.secret");
 const path = require("path");
 
 module.exports = (appInfo) => {
-  const config = (exports = {});
+  const config = {};
   config.multiavatar_key = secretConfig.multiavatar_key;
 
   config.logger = {
@@ -12,7 +12,7 @@ module.exports = (appInfo) => {
     disableConsoleAfterReady: false,
   };
 
-  exports.jwt = secretConfig.jwt;
+  config.jwt = secretConfig.jwt;
 
   config.keys = secretConfig.keys;
 
