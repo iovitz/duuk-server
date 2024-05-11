@@ -1,4 +1,4 @@
-const secretConfig = require("./config.secret1");
+const secretConfig = require("./config.secret");
 
 module.exports = () => {
   const config = (exports = {});
