@@ -1,12 +1,15 @@
 const secretConfig = require("./config.secret");
+const path = require("path");
 
-module.exports = () => {
+module.exports = (appInfo) => {
   const config = (exports = {});
   config.multiavatar_key = secretConfig.multiavatar_key;
 
   config.logger = {
-    consoleLevel: "DEBUG",
-    allowDebugAtProd: true,
+    dir: path.join(appInfo.baseDir, "dev_logs"),
+    level: "INFO",
+    consoleLevel: "INFO",
+    disableConsoleAfterReady: false,
   };
 
   exports.jwt = secretConfig.jwt;
